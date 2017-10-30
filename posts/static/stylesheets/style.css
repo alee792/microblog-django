@@ -1,0 +1,99 @@
+/* Overrides */
+
+*{
+    min-height: 0;
+    min-width: 0;
+    }
+  
+  @font-face {
+    font-family: 'lydian';
+    src: url('../webfonts/lydian.woff2');
+  }
+  
+  @font-face {
+  font-family: 'apercu-web';
+  src: url('../webfonts/apercu-regular.woff2');
+  }
+  
+  body {
+    font: 14px 'apercu-web', "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: #00B7FF;
+  }
+  
+  caption {
+    text-align: left;
+  }
+  
+  /* Custom */
+  .blur-text {
+    color: transparent;
+    text-shadow: 0 0 1px #000;
+  }
+  
+  .brand-title {
+     font-family: lydian, "serif";
+  }
+  
+  .card {
+    margin: .1rem;
+  }
+  
+  .filler {
+    background-color: lightgrey;
+  }
+  
+  .floating-fill {
+    background-image: linear-gradient(bottom, #00B7FF 35%, #fff 0%);
+    background-image: -o-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
+    background-image: -moz-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
+    background-image: -webkit-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
+    background-image: -ms-linear-gradient(bottom, #00B7FF 35%, #fff 0%);
+  }
+  
+  .card-media {
+    margin: auto;
+  }
+  
+  .preview-container {  
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  
+  .preview-item {
+    margin: .5rem;
+  }
+  
+  #profile-toggle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem
+  }
+  
+  .registration {
+    display: none;
+  }
+  
+  .table {
+    margin-bottom: 0;
+  }
+  
+  
+  /* Vertical Align Nonsense */
+  .flex {
+    display: flex;
+  }
+  
+  .full-width {
+    width: 100% !important;
+  }
+  
+  .flex-end {
+    align-self: flex-end;
+  }
+  
