@@ -54,6 +54,6 @@ def create_post(request):
     else:
         form = form_class()
     
-    return render(request, 'posts/create_post.html', {
-        'post': post,
+    return render(request, 'create_post.html', {
+        'form': form,
     })
