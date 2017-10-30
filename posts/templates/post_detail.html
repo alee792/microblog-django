@@ -4,5 +4,9 @@
     <h1>{{ post.content }}</h1>
     <p>{{ post.user }}</p>
     <p>{{ post.created_at }}</p>
-    <a href="{% url 'edit_post' pk=post.pk %}">Edit me!</>
+    {% if user == thing.user %}
+        <p>
+            <a href="{% url 'edit_post' pk=post.pk %}">Edit me!</>
+        </p>
+    {% endif %}
 {% endblock content %}

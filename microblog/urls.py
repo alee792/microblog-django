@@ -16,14 +16,20 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from posts import views
+from posts.backends import MyRegistrationView
 
 urlpatterns = [
     url(r'^$', views.index, name='home'),
-    url(r'^accounts/', 
+    url(r'^accounts/register/$',
+        MyRegistrationView.as_view(),
+        name='registration_register'),
+    url(r'^accounts/create_post/$', views.create_post,
+        name='registration_create_post'),
+    url(r'^accounts/',
         include('registration.backends.simple.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^posts/(?P<pk>\d+)/$', views.post_detail, 
+    url(r'^posts/(?P<pk>\d+)/$', views.post_detail,
         name='post_detail'),
-    url(r'^posts/(?P<pk>\d+)/edit/$', views.edit_post, 
+    url(r'^posts/(?P<pk>\d+)/edit/$', views.edit_post,
         name='edit_post'),
 ]
