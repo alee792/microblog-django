@@ -17,10 +17,11 @@ def post_detail(request, pk):
     post = Post.objects.get(pk=pk)
     return render(request, 'post_detail.html', {'post': post})
 
+@login_required
 def edit_post(request, pk):
     post = Post.objects.get(pk=pk)
 
-    if thing.user != request.user:
+    if post.user != request.user:
         raise Http404
 
     form_class = PostForm
