@@ -104,5 +104,10 @@
 
   .django-form {
     margin: auto;
-    width: 600px;
+    width: 50%;
+  }
+
+  .django-card {
+    max-width: 50%;
+    margin: auto;
   }
