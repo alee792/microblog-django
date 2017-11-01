@@ -97,3 +97,12 @@
     align-self: flex-end;
   }
   
+  /* Django Shenanigans  */
+  .django-form label {
+    display: none;
+  }
+
+  .django-form {
+    margin: auto;
+    width: 600px;
+  }

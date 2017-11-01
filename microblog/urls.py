@@ -19,17 +19,17 @@ from posts import views
 from posts.backends import MyRegistrationView
 
 urlpatterns = [
-    url(r'^$', views.index, name='home'),
+    url(r'^$', views.PostCreateView.as_view(), name='home'),
     url(r'^accounts/register/$',
         MyRegistrationView.as_view(),
         name='registration_register'),
-    url(r'^accounts/create_post/$', views.create_post,
-        name='registration_create_post'),
     url(r'^accounts/',
         include('registration.backends.simple.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^posts/(?P<pk>\d+)/$', views.post_detail,
         name='post_detail'),
-    url(r'^posts/(?P<pk>\d+)/edit/$', views.edit_post,
-        name='edit_post'),
+    url(r'^posts/(?P<pk>\d+)/edit/$', views.PostUpdateView.as_view(),
+        name='edit'),
+    url(r'^accounts/create_post/$', views.PostCreateView.as_view(),
+        name='create'),
 ]

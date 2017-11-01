@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% block title %}
+    Create a Post - {{ block.super }}
+{% endblock title %} 
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="card">
+            <!-- The form to submit a post -->
+            <div class="card-content">
+                <div class="field django-form">
+                    <h1 class="is-size-4">Create a Post</h1>
+                    <div class="control">
+                        <form role="form" action="" method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input class="button is-link"  type="submit" value="Submit" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% for post in posts %}
+        <h1>
+            <a href="{% url 'post_detail' pk=post.pk %}">
+                {{ post.content }}
+            </a>
+        </h1>
+        <p>{{ post.user }}</p>
+        {% endfor %} 
+    </div>
+</section>
+{% endblock %}
