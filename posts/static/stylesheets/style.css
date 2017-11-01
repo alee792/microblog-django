@@ -111,3 +111,8 @@
     max-width: 50%;
     margin: auto;
   }
+
+  .postcards {
+    margin: 1rem;
+    padding: .5rem;
+  }

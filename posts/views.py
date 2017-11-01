@@ -71,9 +71,13 @@ class PostCreateView(LoginRequiredMixin, CreateView, ListView):
     model = Post
     template_name = "post_create.html"
     success_url="/"
+    paginate_by = 10
 
     # Associate post with user
     def form_valid(self, form):
          user = self.request.user
          form.instance.user = user
          return super(PostCreateView, self).form_valid(form)
+
+    def get_queryset(self):
+        return Post.objects.order_by('-created_at')
