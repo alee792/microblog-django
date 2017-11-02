@@ -1,11 +1,23 @@
-
-{% extends 'base.html' %}
-
-{% block content %}
-    <h1>Edit Post created at {{ post.created_at }}</h1>
-    <form role="form" action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+{% extends 'base.html' %} {% block content %}
+<section class="section">
+    <div class="container">
+        <div class="level">
+            <h1 class="is-size-4 level-item">Edit Post created at {{ post.created_at }}?</h1>
+        </div>
+        <div class="card django-card">
+                <!-- The form to submit a post -->
+                <div class="card-content">
+                    <div class="field django-form">
+                        <h1 class="is-size-4">Edit a Post</h1>
+                        <div class="control">
+                            <form role="form" action="" method="post">
+                                {% csrf_token %} {{ form.as_p }}
+                                <input class="button is-link" type="submit" value="Submit" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
 {% endblock content %}

@@ -1,0 +1,46 @@
+ {% extends 'base.html' %} {% block content %}
+<section class="section">
+    <div class="container">
+        <div class="level">
+            <h1 class="is-size-4 level-item">Delete Post created at {{ post.created_at }}?</h1>
+        </div>
+        <form role="form" action="" method="post">
+            {% csrf_token %}
+            <div class="card django-card">
+                <article class="media postcards">
+                    <div class="media-content">
+                        <div class="content">
+                            <p class="is-size-5">
+                                <strong>{{ post.user }}</strong>
+                                <small>{{ post.created_at }}</small>
+                                <br> {{ post.content }} </p>
+                        </div>
+                        <nav class="level is-mobile">
+                            <div class="level-left">
+                                {% if user.pk == post.user.pk %}
+                                <a href="{% url 'edit' pk=post.pk %}" class="level-item">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-edit"></i>
+                                    </span>
+                                </a>
+                                {% endif %}
+                                <a class="level-item">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-retweet"></i>
+                                    </span>
+                                </a>
+                                <a class="level-item">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-heart"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
+                </article>
+                <button class="button is-danger is-pulled-right" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock content %}

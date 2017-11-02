@@ -85,3 +85,4 @@ class PostCreateView(LoginRequiredMixin, CreateView, ListView):
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     success_url='/'
+    template_name = "post_delete.html"
