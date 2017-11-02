@@ -5,13 +5,15 @@
             <h1 class="is-size-4 level-item">Edit Post created at {{ post.created_at }}?</h1>
         </div>
         <div class="card django-card">
-                <!-- The form to submit a post -->
+                <!-- The form to edit a post -->
                 <div class="card-content">
-                    <div class="field django-form">
+                    <div class="field">
                         <h1 class="is-size-4">Edit a Post</h1>
+                        <br>
                         <div class="control">
                             <form role="form" action="" method="post">
                                 {% csrf_token %} {{ form.as_p }}
+                                <br>
                                 <input class="button is-link" type="submit" value="Submit" />
                             </form>
                         </div>

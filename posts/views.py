@@ -41,7 +41,8 @@ def post_detail(request, pk):
 # })
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
-    fields = ('content',)
+    # fields = ('content',)
+    form_class = PostForm
     model = Post
     template_name = "post_update.html"
 
@@ -67,11 +68,12 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 
 class PostCreateView(LoginRequiredMixin, CreateView, ListView): 
     context_object_name = "posts"
-    fields = ('content',)
+    # fields = ('content',)
     model = Post
     template_name = "post_create.html"
     success_url="/"
     paginate_by = 10
+    form_class = PostForm
 
     # Associate post with user
     def form_valid(self, form):

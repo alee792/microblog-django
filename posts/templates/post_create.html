@@ -5,16 +5,18 @@
             <!-- The form to submit a post -->
             <div class="card-content">
                 <div class="field django-form">
-                    <h1 class="is-size-4">Create a Post</h1>
+                    <h1 class="is-size-4">What's on your mind?</h1>
                     <div class="control">
                         <form role="form" action="" method="post">
                             {% csrf_token %} {{ form.as_p }}
+                            <br>
                             <input class="button is-link" type="submit" value="Submit" />
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- This is the part where we iterate and create our "READ" list -->
         {% for post in posts %}
         <div class="card django-card">
             <article class="media postcards">
