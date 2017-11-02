@@ -3,4 +3,4 @@ Users are able to create accounts, express their existential dread in 255 charac
 ![alt text](https://i.imgur.com/qG5iL0X.png)
 
 ## Setup
-Just git clone the files `pipenv install` and `python manage.py runserver`
+Just git clone the files `pipenv install` and `python manage.py runserver`.
