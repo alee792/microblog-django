@@ -4,7 +4,7 @@ from posts.forms import PostForm
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from django.views.generic import CreateView, UpdateView, ListView
+from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 
 # Create your views here.
 def index(request): 
@@ -81,3 +81,7 @@ class PostCreateView(LoginRequiredMixin, CreateView, ListView):
 
     def get_queryset(self):
         return Post.objects.order_by('-created_at')
+
+class PostDeleteView(LoginRequiredMixin, DeleteView):
+    model = Post
+    success_url='/'

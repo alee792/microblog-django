@@ -1,5 +1,5 @@
  {% extends 'base.html' %} {% block title %} Create a Post - {{ block.super }} {% endblock title %} {% block content %}
-<section class="section">
+<section class="section floating-fill">
     <div class="container">
         <div class="card django-card">
             <!-- The form to submit a post -->
@@ -49,7 +49,7 @@
                 </div>
                 <div class="media-right">
                     {% if user.pk == post.user.pk %}
-                    <button class="delete"></button>
+                    <a class="delete" href="{% url 'delete' pk=post.pk %}"></a>
                     {% endif %}
                 </div>
             </article>

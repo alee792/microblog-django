@@ -30,6 +30,8 @@ urlpatterns = [
         name='post_detail'),
     url(r'^posts/(?P<pk>\d+)/edit/$', views.PostUpdateView.as_view(),
         name='edit'),
+    url(r'^posts/(?P<pk>\d+)/delete/$', views.PostDeleteView.as_view(),
+        name='delete'),
     url(r'^accounts/create_post/$', views.PostCreateView.as_view(),
         name='create'),
 ]
