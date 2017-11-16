@@ -2,6 +2,7 @@ from django.forms import ModelForm, Textarea
 
 from posts.models import Post
 
+# Modify the textarea form so it's not ugly as all heck
 class PostForm(ModelForm):
     class Meta:
         model = Post
