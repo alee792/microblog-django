@@ -23,6 +23,7 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
     form_class = PostForm
     model = Post
     template_name = "post_update.html"
+    success_url="/"
 
 class PostCreateView(LoginRequiredMixin, CreateView, ListView): 
     context_object_name = "posts"

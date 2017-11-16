@@ -7,4 +7,4 @@ class MyRegistrationView(RegistrationView):
     def get_success_url(self, request):
         # the named URL that we want to redirect to after
         # successful registration
-        return render(request, 'registration_complete.html')
+        return '/'
